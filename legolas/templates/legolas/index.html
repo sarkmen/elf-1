@@ -1,0 +1,149 @@
+{% extends 'legolas/base.html' %}
+{% load staticfiles %}
+
+
+<!-- 향후 include로 템플릿 재사용할것 -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+{% block head %}
+    <meta name="description" content="korean yelp equivalant, elf" />
+    <meta name="keywords" content="맛집" />
+    <title>elf index page</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+</head>
+
+<body>
+{% block main %}
+<div id="index_wrap">
+    <div class="easy_choice">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a data-toggle="pill" href="#seoul_map">서울</a></li>
+                        <li><a data-toggle="pill" href="#busan_map">부산</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="seoul_map" class="tab-pane fade in active">
+                          <img src="http://placehold.it/400x300" />
+                        </div>
+                        <div id="busan_map" class="tab-pane fade">
+                          <img src="http://placehold.it/400x300" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a data-toggle="pill" href="#">엘프 추천</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="reco" class="tab-pane fade in active">
+                          <img src="http://placehold.it/600x300" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="move_location">
+        <div class="container text-center">
+            <p> 엘프에 처음이신가요? <a href="#">무료로 회원가입</a> 해보세요! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 다른지역보기 &nbsp;&nbsp;&nbsp; <a href="#">인천 | 광주 | 대전 | 대구 | 울산 | 전주 | 강릉 | 수원 | 포항 | 목포 | 제주 | 춘천 | 일산 </a></p>
+        </div>
+    </div>
+
+    <div class="content" style="margin-top:30px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="col-md-12">
+                        <h3>베스트 오브 서울</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li>맛집</li>
+                            <li>술집</li>
+                            <li>고급 레스토랑</li>
+                            <li>쇼핑</li>
+                            <li>노래방</li>
+                            <li>미술관</li>
+                            <li>뷰티&amp;네일</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <ul>
+                            <li>1 짱맛</li>
+                            <li>2 샤이니 짱짱맨. 파이리 피카츄 라이츄 파이리 꼬부기 버터풀 야도란 피존투 또가스 우리들은 모두 친구 마자마자</li>
+                            <li>3 엘프팀 </li>
+                            <li>4 열공중 </li>
+                            <li>5 스네이프가 ㅈ죽었따지 여기는 150자만 보여주는게 좋겠어. slice template tag를 이용하자.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h3>최신 리뷰</h3>
+                        <hr />
+                        <ul>
+                            <li>echo shell 하면 현재 사용하는 shell 이름명이 프린트됨 cli 환경에서 한줄에 하나씩 들어오는 커맨드를 실행해주는 프로그램을 쉘이라고 부름</li>
+                            <li>cmd 쉘은 cmd ㅕㅇ령어를 해석해서 실행해주는것 python 쉘은 파이선 명령어를 해석해서 실행해주는 것</li>
+                            <li>aws-shell 아마존 웹서비스 쉘 기본 os의, 각종 언어의 쉘 등이 있음. 윈도우의 기본 명령 프롬프트, 윈도우의 파워쉘</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                        <p>...</p><p>...</p>
+                        <button id="more_reivew" onclick="">See more 최신리뷰!</button>
+                    </div>
+                    <!-- ajax 구현 요망 -->
+                </div>
+
+                <div class="col-md-5">
+                    <div>
+                        <h3>이달의 할인행사</h3>
+                        <ul>
+                            <li>There no such free lunch</li>
+                            <li>데이터정보처리입문, 데이터베이스, 알고리즘, 디지털논리회로, 선형대수, 정보통신망, 빅데이터의이해</li>
+                            <li>무원보수규정」 제31조에 따라 국가공무원에게 지급하는 수당과 실비변상 등에 관한 사항을 규정함을</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>이달의 인기리뷰</h3>
+                        <ul>
+                            <li>무원법」 제16조 및 「공무원임용령」 제2조제3호에 따른 소속 장관과 제23조에 따 수당등의 지급액, 지급범위 또</li>
+                            <li>한 법률 시행령」 제15조제1항)에게 지급하는 수당등에 </li>
+                            <li> 해당 공무원 월봉급액의 4.1퍼센트를 대우공무원초과할 경우에는</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>서울 주변</h3>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>인천</li>
+                                <li>수원</li>
+                                <li>레이크뷰</li>
+                                <li>일산</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>유타</li>
+                                <li>마루나</li>
+                                <li>호티</li>
+                                <li>의정부</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+</body>
+</html>

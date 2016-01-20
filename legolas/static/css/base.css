@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+}
+
+#head_nav {
+    padding: 10px 0px;
+    background-color: #357999;
+}
+
+#head_nav .r_float {
+    float:right;
+}
+
+#search {
+    margin-top:20px;
+}
+
+.language {
+    color: black;
+}
+
+#foot_nav {
+    margin-top:60px;
+    padding: 20px 0px;
+    background-color: #357999;
+}
+
+#footer {
+    margin-top: 40px;
+}

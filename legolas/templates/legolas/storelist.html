@@ -1,0 +1,36 @@
+{% extends 'legolas/base.html' %}
+{% load staticfiles %}
+
+
+{% block head %}
+    <meta name="description" content="korean yelp equivalant, elf" />
+    <meta name="keywords" content="맛집" />
+    <title>elf storelist</title>
+    <link rel="stylesheet" href="{% static 'css/store_list.css' %}" />
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <div>
+        <div class="container">
+            {% for store in storelist %}
+                <div>
+                    <br />
+                    <h3>{{ store.name }}</p>
+                    {{ store.photo }}
+                    <p>{{ store.store_rating }}</p>
+                </div>
+            {% endfor %}
+                <div>
+                    paginator 준비중...  <a>1 | 2 | 3 | 4 | 5</a>
+                </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

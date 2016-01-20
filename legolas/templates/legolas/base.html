@@ -1,0 +1,79 @@
+
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="팀 엘프" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+
+    <div id="head_nav" class="nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <a><img src="http://placehold.it/160x80" /></a>
+                </div>
+                <div id="search" class="col-sm-6 text-center">
+                    <form>
+                        <input type="text" placeholder="지역명/지하철역명" />
+                        <input type="text" placeholder="맛집/술집/바/노래방/미용실" />
+                        <button type="submit">검색</button>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-default btn-sm r_float">로그인</button>
+                    <button class="btn btn-default btn-sm r_float">회원가입</button>
+                    <div class="col-sm-12">
+                        <a class="r_float language" onmouseover="" onclick="">Change Language</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% block main %}
+    {% endblock %}
+
+    <div id="foot_nav">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="http://placehold.it/200x200" />
+                </div>
+                <div class="col-md-3">
+                    <img src="http://placehold.it/200x200" />
+                </div>
+                <div class="col-md-3">
+                    <img src="http://placehold.it/200x200" />
+                </div>
+                <div class="col-md-3">
+                    <label for="lang">Change Language:&nbsp;</label>
+                    <select name="lang">
+                        <option>한국어</option>
+                        <option>English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container text-center">
+            <p><a href="#">엘프정책 | 이용약관 | 개인정보취급방침 | 청소년보호정책 | 고객센터</a></p>
+            <p>저작권 2,004에서 2,016 사이 옐프 주식 © 옐프, 옐프 로고, 옐프 버스트및 관련 마크는 옐프의 등록 상표입니다.</p>
+            <address></address>
+        </div>
+    </div>
+</body>
+</html>

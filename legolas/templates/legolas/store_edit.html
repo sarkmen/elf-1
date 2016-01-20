@@ -1,0 +1,37 @@
+{% extends 'legolas/base.html' %}
+{% load staticfiles %}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+{% block head %}
+    <meta name="description" content="korean yelp equivalant, elf" />
+    <meta name="keywords" content="맛집" />
+    <title>elf store edit page </title>
+    <link rel="stylesheet" href="{% static 'css/store_edit.css' %}" />
+{% endblock %}
+</head>
+
+
+
+<body>
+
+
+    {% block main %}
+    <div class="store">
+        <div class="container">
+            <h2>NEW STORE</h2>
+            <form method="post" class="post_form">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">SAVE</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+
+
+
+</body>

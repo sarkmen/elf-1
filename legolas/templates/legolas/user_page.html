@@ -1,0 +1,30 @@
+{% extends 'legolas/base.html' %}
+{% load staticfiles %}
+
+
+{% block head %}
+    <meta name="description" content="korean yelp equivalant, elf" />
+    <meta name="keywords" content="맛집" />
+    <title>elf user page</title>
+    <link rel="stylesheet" href="{% static 'css/user_page.css' %}" />
+{% endblock %}
+
+
+
+
+{% block main %}
+
+    <div>
+        <div class="container text-center">
+            <div>
+                <h3>{{ user.nickname }}</h3>
+                <p>Email: {{ user.email }}</p>
+                <p>Rewviews: {{ user.n_review }}</p>
+                <p>Profile: {{ user.profile }}</p>
+                <p>{{ user.intro }}</p>
+                <p>Since: {{ user.created_at }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
