@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 '''
     선생님께,
     엘프팀이 만드려고 하는 사이트는 yelp.com과 유사한 리뷰사이트입니다.
@@ -10,97 +8,31 @@ from django.db import models
 '''
 
 
-
 class Area(models.Model):
-    AREA_CHOICES = (
-        ('seoul', '서울특별시'),
-        ('busan', '부산광역시'),
-        ('daegu', '대구광역시'),
-        ('daejeon', '대전광역시'),
-        ('incheon', '인천광역시'),
-        ('kwangju', '광주광역시'),
-        ('ulsan', '울산광역시'),
-        ('gangwon', '강원도'),
-        ('gyeonggi', '경기도'),
-        ('gyeongnam', '경상남도'),
-        ('gyeongbuk', '경상북도'),
-        ('jeonnam', '전라남도'),
-        ('jeonbuk', '전라북도'),
-        ('chungnam', '충청남도'),
-        ('chungbuk', '충청북도'),
-        ('jeju', '제주도'),
-    )
-
-    name = models.CharField(max_length=20, choices=AREA_CHOICES, default='seoul')
+    name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
 
 
 class SubArea(models.Model):
-    SUBAREA_CHOICES = (
-        ('hongdae', '홍대/신촌'),
-        ('hoegi', '회기/강북'),
-        ('gyodae', '교대/강남'),
-        ('sinlim', '신림'),
-        ('sadang', '사당이수'),
-        ('itaewon', '이태원용산'),
-        ('guro', '구로/영등포'),
-        ('jongro', '종로/명동'),
-        ('jamsil', '잠실/송파'),
-        ('gundae', '건대/강변'),
-    )
-
-    name = models.CharField(max_length=20, choices=SUBAREA_CHOICES, default='hongdae')
     parent = models.ForeignKey(Area)
-
-    ## 위처럼 하는 것이 맞는지 모르겠습니다...
-    ## SUBAREA_CHOICES 에는 앞으로 약 200 여개의 subarea 지명이 더 추가되어야 합니다.
-    ## 현재는 서울의 SUBAREA_CHOICES만 표현되어 있습니다.
+    name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
 
 
 class Category(models.Model):
-    CATEGORY_CHOICES = (
-        ('food', '맛집'),
-        ('cafe', '카페'),
-        ('drink', '술집'),
-        ('shopping', '쇼핑'),
-        ('karaoke', '노래방'),
-        ('gallery', '문화생활'),
-        ('beauty', '뷰티/헤어/네일'),
-    )
-    name = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='food')
+    name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
 
+
 class SubCategory(models.Model):
-    SUBCATEGORY_CHOICES = (
-        ('chicken','치킨'),
-        ('pizza','피자'),
-        ('korean','한식'),
-        ('snack','분식'),
-        ('japanese','일식'),
-        ('chinese','중식'),
-        ('meat', '고기'),
-        ('fastfood','패스트푸드'),
-        ('soju','소주'),
-        ('beer','맥주'),
-        ('cocktail','칵테일'),
-        ('liquor','양주'),
-        ('sake','사케/이자까야'),
-        ('makgoli','막걸리'),
-    )
-    name = models.CharField(max_length=20, choices=SUBCATEGORY_CHOICES, default='pizza')
     parent = models.ForeignKey(Category)
-
-    ## Category - SubCategory 간 관계설정이 이렇게 되는게 맞는지 모르겠습니다.
-    ## SUBCATEGORY_CHOICES에는 앞으로 약 20가지가 더 추가되어야 합니다.
-    ## 현재는 '맛집'과  '술집'에 대한 SUBCATEGORY_CHOICES만 표현되어 있습니다.
-
+    name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
